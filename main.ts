@@ -8,7 +8,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
     let screenClone = image1.clone()
     let tempImg = image.create(Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1))
     helpers.imageBlit(tempImg, 0, 0, Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1), screenClone, 0, 0, 160, 120, true, false)
-    helpers.imageBlit(screenClone, (tempImg.width - 160) / -2, (tempImg.height - 120) / -2, tempImg.width * blurSize1, tempImg.height * blurSize1, tempImg, 0, 0, tempImg.width, tempImg.height, true, false)
+    helpers.imageBlit(screenClone, (tempImg.width * blurSize1 - 160) / -2, (tempImg.height * blurSize1 - 120) / -2, tempImg.width * blurSize1, tempImg.height * blurSize1, tempImg, 0, 0, tempImg.width, tempImg.height, true, false)
     image1.fillRect(0, 0, 160, 120, 0)
     helpers.imageBlit(image1, x1, y1, 160 * size1, 120 * size1, screenClone, 0, 0, 160, 120, true, false)
 })
@@ -78,7 +78,7 @@ namespace Zoom {
             pause(25)
         }
     }
-    //% block="blur screen image to pixel size $size || over $ms ms"
+    //% block="pixelate screen image to pixel size $size || over $ms ms"
     //% weight=2
     export function SetBlurFilter(size: number, ms = 25) {
         if (ms < 25) {
