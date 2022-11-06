@@ -34,7 +34,7 @@ enum Mode {
 }
 //% color="#3fcbf4"
 //% block="Screen Effects"
-//% icon="\uf125"
+//% icon="\uf03e"
 namespace screenEffects {
     //% block="set screen zoom to $size times with anchor $anchor || over $ms ms"
     //% weight=2
