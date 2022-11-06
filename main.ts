@@ -33,6 +33,7 @@ enum Mode {
     BottomRight
 }
 //% color="#3fcbf4"
+//% block="Screen Effects"
 namespace screenEffects {
     //% block="set screen zoom to $size times with anchor $anchor || over $ms ms"
     //% weight=2
