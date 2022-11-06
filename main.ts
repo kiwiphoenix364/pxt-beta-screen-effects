@@ -15,7 +15,8 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
         image1.fillRect(0, 0, 160, 120, 0)
         helpers.imageBlit(image1, x1, y1, 160 * zoomSize1, 120 * zoomSize1, screenClone, 0, 0, 160, 120, true, false)
     } else {
-        helpers.imageBlit(image1, 0, 0, 160, 120, screenClone, 0, 0, 160, 120, true, false)
+        image1 = screenClone.clone()
+        
     }
 })
 enum Mode {
