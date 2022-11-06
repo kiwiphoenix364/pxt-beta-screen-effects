@@ -39,7 +39,7 @@ enum Mode {
     //% block="Bottom-Right"
     BottomRight
 }
-//% color="#989a9b"
+//% color="#71dbfc"
 //% block="Screen Effects"
 //% icon="\uf125"
 namespace screenEffects {
