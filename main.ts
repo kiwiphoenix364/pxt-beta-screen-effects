@@ -1,6 +1,6 @@
 let y1 = 0
 let x1 = 0
-let memsize1 = 0
+let memSize1 = 0
 let size1 = 1
 let zLayer1 = 1
 let blurSize1 = 1
@@ -33,7 +33,7 @@ enum Mode {
     BottomRight
 }
 //% color="#3fcbf4"
-namespace Zoom {
+namespace screenEffects {
     //% block="set screen zoom to $size times with anchor $anchor || over $ms ms"
     //% weight=2
     //% picker.fieldEditor="gridpicker"
@@ -46,9 +46,9 @@ namespace Zoom {
         if (ms < 25) {
             ms = 25
         }
-        memsize1 = size - size1
+        memSize1 = size - size1
         for (let i = 0; i < (ms / 25); i++) {
-            size1 += memsize1 / (ms / 25)
+            size1 += memSize1 / (ms / 25)
             if (anchor == 0 || anchor == 2 || anchor == 7) {
                 x1 = 80 - 80 * size1
             } else if (anchor == 3 || anchor == 5 || anchor == 8) {
@@ -70,9 +70,9 @@ namespace Zoom {
         if (ms < 25) {
             ms = 25
         }
-        memsize1 = size - size1
+        memSize1 = size - size1
         for (let j = 0; j < (ms / 25); j++) {
-            size1 += memsize1 / (ms / 25)
+            size1 += memSize1 / (ms / 25)
             x1 = -x + 80 - size1 * 80
             y1 = -y + 60 - size1 * 60
             pause(25)
@@ -80,13 +80,15 @@ namespace Zoom {
     }
     //% block="pixelate screen image to pixel size $size || over $ms ms"
     //% weight=2
+    //% ms.shadow="timePicker"
+    //% expandableArgumentMode="toggle"
     export function SetBlurFilter(size: number, ms = 25) {
         if (ms < 25) {
             ms = 25
         }
-        memsize1 = size - blurSize1
+        memSize1 = size - blurSize1
         for (let j = 0; j < (ms / 25); j++) {
-            blurSize1 += memsize1 / (ms / 25)
+            blurSize1 += memSize1 / (ms / 25)
             pause(25)
         }
     }
