@@ -7,18 +7,17 @@ let blurSize1 = 1
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
     let screenClone = image1.clone()
     if (blurSize1 != 1) {
-        let tempImg = image.create(Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1))
-        helpers.imageBlit(tempImg, 0, 0, Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1), screenClone, 0, 0, 160, 120, true, false)
-        helpers.imageBlit(screenClone, 0, 0, 160, 120, tempImg, (tempImg.width * blurSize1 - 160) / 2, (tempImg.height * blurSize1 - 120) / 2, tempImg.width - (tempImg.width * blurSize1 - 160) / 2, tempImg.height - (tempImg.height * blurSize1 - 120) / 2, true, false)
-        image1 = screenClone.clone()
+    let tempImg = image.create(Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1))
+    helpers.imageBlit(tempImg, 0, 0, Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1), screenClone, 0, 0, 160, 120, true, false)
+    helpers.imageBlit(screenClone, (tempImg.width * blurSize1 - 160) / -2, (tempImg.height * blurSize1 - 120) / -2, tempImg.width * blurSize1, tempImg.height * blurSize1, tempImg, 0, 0, tempImg.width, tempImg.height, true, false)
     }
     if (zoomSize1 != 1) {
         image1.fillRect(0, 0, 160, 120, 0)
         helpers.imageBlit(image1, x1, y1, 160 * zoomSize1, 120 * zoomSize1, screenClone, 0, 0, 160, 120, true, false)
     } else {
+        image1 == screenClone.clone()
         
     }
-    helpers.imageBlit(image1, 0, 0, 160, 120, screenClone, 0, 0, 160, 120, true, false)
 })
 enum Mode {
     //% block="Center"
