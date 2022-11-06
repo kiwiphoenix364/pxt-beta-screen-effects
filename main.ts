@@ -12,12 +12,9 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
     helpers.imageBlit(screenClone, (tempImg.width * blurSize1 - 160) / -2, (tempImg.height * blurSize1 - 120) / -2, tempImg.width * blurSize1, tempImg.height * blurSize1, tempImg, 0, 0, tempImg.width, tempImg.height, true, false)
     }
     if (zoomSize1 != 1) {
-        image1.fillRect(0, 0, 160, 120, 0)
-        helpers.imageBlit(image1, x1, y1, 160 * zoomSize1, 120 * zoomSize1, screenClone, 0, 0, 160, 120, true, false)
-    } else {
-        image1 == screenClone.clone()
-        
+        image1.fillRect(0, 0, 160, 120, 15)
     }
+    helpers.imageBlit(image1, x1, y1, 160 * zoomSize1, 120 * zoomSize1, screenClone, 0, 0, 160, 120, true, false)
 })
 enum Mode {
     //% block="Center"
