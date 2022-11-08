@@ -14,8 +14,8 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             pixelArray.push(screenClone.getPixel(randint(0, 160), randint(0, 120)))
         }
         let staticImg = image.create(10, 120)
-        for (let x = 0; x < staticImg.width; x++) {
-            for (let y = 0; y < staticImg.height; y++) {
+        for (let x = 0; x < 10; x++) {
+            for (let y = 0; y < 120; y++) {
                 if (Math.percentChance(screenStatic)) {
                     staticImg.setPixel(x, y, pixelArray[randint(0, 15)])
                 }
