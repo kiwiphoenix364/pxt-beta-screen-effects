@@ -13,8 +13,16 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
         for (let i = 0; i < 15; i++) {
             pixelArray.push(screenClone.getPixel(randint(0, 160), randint(0, 120)))
         }
-        for (let i = 0; i < ((screenClone.width * screenClone.height) / 100) * screenStatic + randint(-2, 2); i++) {
-            screenClone.setPixel(randint(0,160), randint(0,120), pixelArray[randint(0,15)])
+        let staticImg = image.create(10, 120)
+        for (let x = 0; x < staticImg.width; x++) {
+            for (let y = 0; y < staticImg.height; y++) {
+                if (Math.percentChance(screenStatic)) {
+                    screenClone.setPixel(x, y, pixelArray[randint(0, 15)])
+                }
+            }
+        }
+        for (let i = 0; i < screenClone.width; i++) {
+            helpers.imageBlitRow(screenClone, i, 120, staticImg, randint(1, 10), 120)
         }
     }
     if (blurSize1 != 1) {
