@@ -5,7 +5,8 @@ let zoomSize1 = 1
 let zLayer1 = 1
 let blurSize1 = 1
 let screenStatic = 0
-let pixelArray: any
+let pixelArray = [0]
+pixelArray = []
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
     let screenClone = image1.clone()
     if (screenStatic > 0) {
