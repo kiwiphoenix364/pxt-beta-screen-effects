@@ -14,7 +14,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
         for (let i = 0; i < 15; i++) {
             pixelArray.push(screenClone.getPixel(randint(0, 160), randint(0, 120)))
         }
-        staticImg = image.create(16, 12)
+        staticImg = image.create(4, 3)
         for (let x = 0; x < 16; x++) {
             for (let y = 0; y < 12; y++) {
                 if (Math.percentChance(screenStatic)) {
@@ -22,9 +22,9 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
                 }
             }
         }
-        for (let i = 0; i < 10; i++) {
-            for (let j = 0; j < 10; j++) {
-                helpers.imageBlit(screenClone, i * 16, j * 12, 16, 12, staticImg, 0, 0, 16, 12, true, false)
+        for (let i = 0; i < 40; i++) {
+            for (let j = 0; j < 40; j++) {
+                helpers.imageBlit(screenClone, i * 4, j * 3, 16, 12, staticImg, 0, 0, 16, 12, true, false)
                 if (Math.percentChance(50)) {
                     staticImg.flipX()
                 } else {
