@@ -7,16 +7,17 @@ let blurSize1 = 1
 let screenStatic = 0
 let pixelArray = [0]
 pixelArray = []
+let staticImg = image.create(10, 120)
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
     let screenClone = image1.clone()
     if (screenStatic > 0) {
         for (let i = 0; i < 15; i++) {
             pixelArray.push(screenClone.getPixel(randint(0, 160), randint(0, 120)))
         }
-        let staticImg = image.create(10, 120)
+        staticImg = image.create(10, 120)
         for (let x = 0; x < 10; x++) {
             for (let y = 0; y < 120; y++) {
-                if (Math.percentChance(screenStatic)) {
+                if (Math.percentChance(100)) {
                     staticImg.setPixel(x, y, pixelArray[randint(0, 15)])
                 }
             }
