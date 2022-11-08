@@ -8,13 +8,13 @@ let screenStatic = 0
 let pixelArray = [0]
 let staticImg = image.create(10, 120)
 game.onUpdateInterval(200, function() {
-    staticImg = image.create(40, 40)
+    staticImg = image.create(10, 120)
     pixelArray = []
     for (let i = 0; i < 15; i++) {
         pixelArray.push(image.screenImage().getPixel(randint(0, 160), randint(0, 120)))
     }
-    for (let x = 0; x < 40; x++) {
-        for (let y = 0; y < 40; y++) {
+    for (let x = 0; x < 10; x++) {
+        for (let y = 0; y < 120; y++) {
             if (Math.percentChance(screenStatic)) {
                 staticImg.setPixel(x, y, pixelArray[randint(0, 15)])
             }
@@ -25,8 +25,8 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
     let screenClone = image1.clone()
     if (screenStatic > 0) {
         for (let x = 0; x < 4; x++) {
-            for (let y = 0; y < 3; y++) {
-                helpers.imageBlit(screenClone, 40 * x, 40 * y, 40, 40, staticImg, 0, 0, 40, 40, true, false)
+            for (let y = 0; y < 1; y++) {
+                helpers.imageBlitRow(screenClone, x, 0, staticImg, randint(0,9), 120)
                 if (Math.percentChance(50)) {
                     staticImg.flipX()
                 } else {
