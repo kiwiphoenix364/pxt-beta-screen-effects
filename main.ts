@@ -8,7 +8,7 @@ let screenStatic = 0
 let pixelArray: any
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
     let screenClone = image1.clone()
-    if (pixelArray > 0) {
+    if (screenStatic > 0) {
         for (let i = 0; i < 15; i++) {
             pixelArray.push(screenClone.getPixel(randint(0, 160), randint(0, 120)))
         }
