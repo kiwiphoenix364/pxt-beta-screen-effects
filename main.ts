@@ -4,8 +4,18 @@ let memSize1 = 0
 let zoomSize1 = 1
 let zLayer1 = 1
 let blurSize1 = 1
+let screenStatic = 0
+let pixelArray: any
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
     let screenClone = image1.clone()
+    if (pixelArray > 0) {
+        for (let i = 0; i < 15; i++) {
+            pixelArray.push(screenClone.getPixel(randint(0, 160), randint(0, 120)))
+        }
+        for (let i = 0; i < ((screenClone.width * screenClone.height) / 100) * screenStatic + randint(-2, 2); i++) {
+            screenClone.setPixel(randint(0, 160), randint(0, 120), pixelArray[randint(0, 15)])
+        }
+    }
     if (blurSize1 != 1) {
     let tempImg = image.create(Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1))
     helpers.imageBlit(tempImg, 0, 0, Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1), screenClone, 0, 0, 160, 120, true, false)
@@ -100,5 +110,15 @@ namespace screenEffects {
             blurSize1 += memSize1 / (ms / 25)
             pause(25)
         }
+    }
+    //% block="set screen static effect to $size percent"
+    //% weight=3
+    export function SetStaticFilter(size: number) {
+        if (size > 100) {
+            size = 100
+        } else if (size < 0) {
+            size = 0
+        }
+        screenStatic = size
     }
 }
