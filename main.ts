@@ -16,7 +16,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
         for (let x = 0; x < screenClone.width; x++) {
             for (let y = 0; y < screenClone.height; y++) {
                 if (Math.percentChance(screenStatic)) {
-                    screenClone.setPixel(randint(0, 160), randint(0, 120), pixelArray[randint(0, 15)])
+                    screenClone.setPixel(x, y, pixelArray[randint(0, 15)])
                 }
             }
         }
