@@ -7,14 +7,14 @@ let blurSize1 = 1
 let screenStatic = 0
 let pixelArray = [0]
 let staticImg = image.create(10, 120)
-game.onUpdateInterval(1000, function() {
-    staticImg = image.create(320, 240)
+game.onUpdateInterval(100, function() {
+    staticImg = image.create(40, 30)
     pixelArray = []
     for (let i = 0; i < 15; i++) {
         pixelArray.push(image.screenImage().getPixel(randint(0, 160), randint(0, 120)))
     }
-    for (let x = 0; x < 320; x++) {
-        for (let y = 0; y < 240; y++) {
+    for (let x = 0; x < 40; x++) {
+        for (let y = 0; y < 30; y++) {
             if (Math.percentChance(screenStatic)) {
                 staticImg.setPixel(x, y, pixelArray[randint(0, 15)])
             }
@@ -24,11 +24,15 @@ game.onUpdateInterval(1000, function() {
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
     let screenClone = image1.clone()
     if (screenStatic > 0) {
-        helpers.imageBlit(screenClone, 0, 0, 160, 120, staticImg, randint(0, 160), randint(0, 120), 160, 120, true, false)
-        if (Math.percentChance(50)) {
-            staticImg.flipX()
-        } else {
-            staticImg.flipY()
+        for (let x = 0; x < 4; x++) {
+            for (let y = 0; y < 3; y++) {
+                helpers.imageBlit(screenClone, 40 * x, 40 * y, 40, 30, staticImg, 0, 0, 40, 30, true, false)
+                if (Math.percentChance(50)) {
+                    staticImg.flipX()
+                } else {
+                    staticImg.flipY()
+                }
+            }
         }
     }
     if (blurSize1 != 1) {
