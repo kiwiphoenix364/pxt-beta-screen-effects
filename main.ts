@@ -7,7 +7,7 @@ let blurSize1 = 1
 let screenStatic = 0
 let pixelArray = [0]
 let staticImg = image.create(10, 120)
-game.onUpdateInterval(50, function() {
+game.onUpdateInterval(200, function() {
     staticImg = image.create(40, 40)
     pixelArray = []
     for (let i = 0; i < 15; i++) {
