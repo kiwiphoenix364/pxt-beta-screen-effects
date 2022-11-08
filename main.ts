@@ -6,10 +6,10 @@ let zLayer1 = 1
 let blurSize1 = 1
 let screenStatic = 0
 let pixelArray = [0]
-pixelArray = []
 let staticImg = image.create(10, 120)
 game.onUpdateInterval(100, function() {
     staticImg = image.create(120, 160)
+    pixelArray = []
     for (let i = 0; i < 15; i++) {
         pixelArray.push(image.screenImage().getPixel(randint(0, 160), randint(0, 120)))
     }
