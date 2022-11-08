@@ -22,7 +22,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
                 }
             }
         }
-        for (let i = 0; i < 40; i++) {
+        for (let i = 0; i < 0; i++) {
             helpers.imageBlit(screenClone, i * 4, 0, 4, 120, staticImg, randint(0,5), 0, 4, 120, true, false)
             if (Math.percentChance(50)) {
                 staticImg.flipX()
