@@ -14,7 +14,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             pixelArray.push(screenClone.getPixel(randint(0, 160), randint(0, 120)))
         }
         for (let i = 0; i < ((screenClone.width * screenClone.height) / 100) * screenStatic + randint(-2, 2); i++) {
-            screenClone.setPixel(randint(0, 160), randint(0, 120), pixelArray[randint(0, 15)])
+            image1.setPixel(randint(0,160), randint(0,120), pixelArray[randint(0,15)])
         }
     }
     if (blurSize1 != 1) {
