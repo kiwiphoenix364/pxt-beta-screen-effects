@@ -7,14 +7,14 @@ let blurSize1 = 1
 let screenStatic = 0
 let pixelArray = [0]
 let staticImg = image.create(10, 120)
-game.onUpdateInterval(500, function() {
+game.onUpdateInterval(1000, function() {
     staticImg = image.create(320, 240)
     pixelArray = []
     for (let i = 0; i < 15; i++) {
         pixelArray.push(image.screenImage().getPixel(randint(0, 160), randint(0, 120)))
     }
-    for (let x = 0; x < 160; x++) {
-        for (let y = 0; y < 120; y++) {
+    for (let x = 0; x < 320; x++) {
+        for (let y = 0; y < 240; y++) {
             if (Math.percentChance(screenStatic)) {
                 staticImg.setPixel(x, y, pixelArray[randint(0, 15)])
             }
