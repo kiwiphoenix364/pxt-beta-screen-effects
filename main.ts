@@ -22,8 +22,13 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
                 }
             }
         }
-        for (let i = 0; i < 160; i++) {
-            helpers.imageBlit(screenClone, i, 0, 1, 120, staticImg, randint(0,9), 0, 1, 120, true, false)
+        for (let i = 0; i < 40; i++) {
+            helpers.imageBlit(screenClone, i * 4, 0, 4, 120, staticImg, randint(0,5), 0, 4, 120, true, false)
+            if (Math.percentChance(50)) {
+                staticImg.flipX()
+            } else {
+                staticImg.flipY()
+            }
         }
     }
     if (blurSize1 != 1) {
