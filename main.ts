@@ -26,7 +26,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
     if (screenStatic > 0) {
         for (let x = 0; x < 4; x++) {
             for (let y = 0; y < 3; y++) {
-                helpers.imageBlit(screenClone, 40 * x, 40 * y, 40, 30, staticImg, 0, 0, 40, 30, true, false)
+                helpers.imageBlit(screenClone, 40 * x, 30 * y, 40, 30, staticImg, 0, 0, 40, 30, true, false)
                 if (Math.percentChance(50)) {
                     staticImg.flipX()
                 } else {
