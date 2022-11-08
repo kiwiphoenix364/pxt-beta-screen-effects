@@ -14,7 +14,7 @@ game.onUpdateInterval(200, function() {
         pixelArray.push(image.screenImage().getPixel(randint(0, 160), randint(0, 120)))
     }
     for (let x = 0; x < 120; x++) {
-        for (let y = 0; y < 120; y++) {
+        for (let y = 0; y < 160; y++) {
             if (Math.percentChance(screenStatic)) {
                 staticImg.setPixel(x, y, pixelArray[randint(0, 15)])
             }
