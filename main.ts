@@ -144,7 +144,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             }
         }
         for (let i = 0; i < 160; i++) {
-            helpers.imageBlitRow(screenClone, i, 1, staticImg, randint(1,10), 1)
+            helpers.imageBlitRow(screenClone, i, 1, staticImg, randint(1,10), 120)
         }
     }
     if (blurSize1 != 1) {
