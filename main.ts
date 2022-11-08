@@ -8,7 +8,7 @@ let screenStatic = 0
 let pixelArray = [0]
 pixelArray = []
 let staticImg = image.create(10, 120)
-game.onUpdateInterval(500, function() {
+game.onUpdateInterval(control.eventContext().deltaTime * 10, function() {
     staticImg = image.create(120, 160)
     for (let i = 0; i < 15; i++) {
         pixelArray.push(image.screenImage().getPixel(randint(0, 160), randint(0, 120)))
