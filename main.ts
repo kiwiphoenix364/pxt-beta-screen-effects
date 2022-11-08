@@ -144,7 +144,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             }
         }
         for (let i = 0; i < 160; i++) {
-            helpers.imageBlitRow(screenClone, i, 1, staticImg, randint(1,10), 120)
+            helpers.imageBlitRow(screenClone, i, 1, staticImg, randint(1,10), 1)
         }
     }
     if (blurSize1 != 1) {
@@ -156,7 +156,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
         image1.fillRect(0, 0, 160, 120, 15)
         helpers.imageBlit(image1, x1, y1, 160 * zoomSize1, 120 * zoomSize1, screenClone, 0, 0, 160, 120, true, false)
     } else {
-        helpers.imageBlit(image1, 0, 0, 160, 0, screenClone, 0, 0, 160, 120, true, false)
+        helpers.imageBlit(image1, 0, 0, 160, 120, screenClone, 0, 0, 160, 120, true, false)
     }
     
 })
