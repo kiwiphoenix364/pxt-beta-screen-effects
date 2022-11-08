@@ -24,7 +24,7 @@ game.onUpdateInterval(1000, function() {
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
     let screenClone = image1.clone()
     if (screenStatic > 0) {
-        helpers.imageBlit(screenClone, randint(0, 160), randint(0, 120), 160, 120, staticImg, randint(0, 160), randint(0, 120), 160, 120, true, false)
+        helpers.imageBlit(screenClone, 0, 0, 160, 120, staticImg, randint(0, 160), randint(0, 120), 160, 120, true, false)
         if (Math.percentChance(50)) {
             staticImg.flipX()
         } else {
