@@ -16,7 +16,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
         for (let x = 0; x < 160; ++x) {
             image1.getRows(x, buf)
             for (let y = 0; y < Math.floor(1.2 * screenStatic) + randint(Math.min(screenStatic, 1), -1); ++y) {
-                buf[randint(0,119)] = 15
+                buf[1] = 15
             }
             image1.setRows(x, buf)
         }
