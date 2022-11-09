@@ -69,6 +69,7 @@ namespace screenEffects {
     //% picker=Mode
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
+    //% group=Zoom
     export function SetZoomFilter(size: number, anchor: Mode, ms = 25) {
         if (ms < 25) {
             ms = 25
@@ -93,6 +94,7 @@ namespace screenEffects {
     //% weight=1
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
+    //% group=Zoom
     export function SetZoomFilterOffset(size: number, x: number, y: number, ms = 25) {
         if (ms < 25) {
             ms = 25
@@ -109,6 +111,7 @@ namespace screenEffects {
     //% weight=2
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
+    //% group=Pixelate
     export function SetBlurFilter(size: number, ms = 25) {
         if (ms < 25) {
             ms = 25
@@ -121,6 +124,7 @@ namespace screenEffects {
     }
     //% block="set screen static effect to $size percent"
     //% weight=3
+    //% group=Static
     export function SetStaticFilter(size: number) {
         if (size > 100) {
             size = 100
