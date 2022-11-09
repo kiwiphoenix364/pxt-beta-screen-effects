@@ -17,7 +17,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             image1.getRows(x, buf)
             for (let y = 0; y < 120; ++y) {
                 if (Math.percentChance(screenStatic)) {
-                    buf[randint(0,119)] = pixelArray[randint(0,14)]
+                    buf[y] = pixelArray[randint(0,14)]
                 }
             }
             image1.setRows(x, buf)
