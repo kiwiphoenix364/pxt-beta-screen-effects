@@ -123,15 +123,24 @@ namespace screenEffects {
             pause(25)
         }
     }
-    //% block="set screen static effect to $size percent"
+    //% block="set screen static effect to $size percent || over $ms ms"
     //% weight=3
+    //% ms.shadow="timePicker"
+    //% expandableArgumentMode="toggle"
     //% group=Static
-    export function SetStaticFilter(size: number) {
+    export function SetStaticFilter(size: number, ms = 25) {
         if (size > 100) {
             size = 100
         } else if (size < 0) {
             size = 0
         }
-        screenStatic = size
+        if (ms < 25) {
+            ms = 25
+        }
+        memSize1 = size - screenStatic
+        for (let j = 0; j < (ms / 25); j++) {
+            screenStatic += memSize1 / (ms / 25)
+            pause(25)
+        }
     }
 }
