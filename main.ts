@@ -2,7 +2,7 @@ let y1 = 0
 let x1 = 0
 let memSize1 = 0
 let zoomSize1 = 1
-const buf = Buffer.create(120)
+let buf = Buffer.create(120)
 const zLayer1 = 1
 let blurSize1 = 1
 let screenStatic = 0
@@ -18,6 +18,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
                 buf[randint(0,119)] = pixelArray[randint(0,14)]
             }
             image1.setRows(x, buf)
+            buf = Buffer.create(120)
         }
     }    
     let screenClone = image1.clone()
