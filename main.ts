@@ -125,6 +125,6 @@ namespace screenEffects {
         } else if (size < 0) {
             size = 0
         }
-        screenStatic = size
+        screenStatic = size / 100
     }
 }
