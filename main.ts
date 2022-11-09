@@ -22,14 +22,6 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             image1.getRows(x, buf)
             image1.setRows(x, buf)
         }
-        for (let x = 0; x < 160; x++) {
-            helpers.imageBlitRow(screenClone, x, 0, staticImg, randint(0,9), 160)
-            if (Math.percentChance(50)) {
-                staticImg.flipX()
-            } else {
-                staticImg.flipY()
-            }
-        }
     }
     if (blurSize1 != 1) {
     let tempImg = image.create(Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1))
