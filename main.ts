@@ -7,19 +7,15 @@ const zLayer1 = 1
 let blurSize1 = 1
 let screenStatic = 0
 let pixelArray = [0]
-let staticImg = image.create(0, 0)
-game.onUpdateInterval(200, function() {
-    staticImg = image.create(160, 120)
+let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
     pixelArray = []
     for (let i = 0; i < 15; i++) {
-        pixelArray.push(image.screenImage().getPixel(randint(0, 160), randint(0, 120)))
+        pixelArray.push(image.screenImage().getPixel(randint(0, 159), randint(0, 119)))
     }
-})
-let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
     if (screenStatic > 0) {
         for (let x = 0; x < 160; ++x) {
             image1.getRows(x, buf)
-            for (let y = 0; y < 8; ++y) {
+            for (let y = 0; y < 1.2 * screenStatic; ++y) {
                 buf[randint(0,119)] = pixelArray[randint(0,14)]
             }
             image1.setRows(x, buf)
