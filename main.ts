@@ -16,16 +16,16 @@ game.onUpdateInterval(200, function() {
     }
 })
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
-    let screenClone = image1.clone()
     if (screenStatic > 0) {
         for (let x = 0; x < 160; ++x) {
             image1.getRows(x, buf)
             for (let y = 0; y < 8; ++y) {
-                buf[1] = 1
+                buf[randint(0,119)] = randint(0,14)
             }
             image1.setRows(x, buf)
         }
-    }
+    }    
+    let screenClone = image1.clone()
     if (blurSize1 != 1) {
     let tempImg = image.create(Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1))
     helpers.imageBlit(tempImg, 0, 0, Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1), screenClone, 0, 0, 160, 120, true, false)
