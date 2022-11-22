@@ -144,7 +144,7 @@ namespace screenEffects {
         }
     }
     //% block="create renderable to screen || on z-layer $z"
-    //% draggableParameters="reporter"
+    //% draggableParameters="image"
     //% blockAllowMultiple=1
     //% weight=4
     //% group=Advanced
