@@ -143,13 +143,30 @@ namespace screenEffects {
             pause(25)
         }
     }
-    //% block="create renderable to screen $image $camera || on z-layer $z"
+    //% block="create renderable to screen $image || on z-layer $z"
     //% draggableParameters="image"
-    //% draggableParameters="camera"
     //% blockAllowMultiple=1
     //% weight=4
     //% group=Advanced
-    export function createRenderable(z = 1, handler: (image: Image, camera: scene.Camera) => void) {
+    export function createRenderable(z = 1, handler: (image: Image) => void) {
         scene.createRenderable(z, handler)
+    }
+    //% block="create buffer $buf size $size"
+    //% weight=5
+    //% group=Advanced
+    export function createBuffer(buf: Buffer, size: number) {
+        buf = Buffer.create(size)
+    }
+    //% block="get row at y $y from image $image and put into buffer $buf"
+    //% weight=6
+    //% group=Advanced
+    export function getRowsBlock(image: Image, buf: Buffer, y: number) {
+        return image.getRows(y, buf)
+    }
+    //% block="set row from buffer $buf to image $image at y $y"
+    //% weight=6
+    //% group=Advanced
+    export function setRowsBlock(image: Image, buf: Buffer, y: number) {
+        return image.setRows(y, buf)
     }
 }
