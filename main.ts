@@ -149,6 +149,6 @@ namespace screenEffects {
     //% weight=4
     //% group=Advanced
     export function createRenderable(z = 1, handler: (image: Image, camera: scene.Camera) => null) {
-        scene.createRenderable(z, (image: Image, camera: scene.Camera) => {})
+        scene.createRenderable(z, handler => {})
     }
 }
