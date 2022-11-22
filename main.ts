@@ -167,6 +167,6 @@ namespace screenEffects {
     //% weight=6
     //% group=Advanced
     export function setRowsBlock(image: any, buf: Buffer, y: number) {
-        return image.setRows(y, buf)
+        image.setRows(y, buf)
     }
 }
