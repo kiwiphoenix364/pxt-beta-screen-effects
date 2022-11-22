@@ -143,4 +143,14 @@ namespace screenEffects {
             pause(25)
         }
     }
+    //% block="create renderable to screen || on z-layer $z"
+    //% draggableParameters="reporter"
+    //% blockAllowMultiple=1
+    //% weight=4
+    //% group=Advanced
+    export function createRenderable(z = 1, handler: (image: Image, camera: scene.Camera) => void) {
+        scene.createRenderable(z, handler =>  {
+
+        })
+    }
 }
