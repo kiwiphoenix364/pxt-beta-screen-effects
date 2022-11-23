@@ -161,16 +161,14 @@ namespace screenEffects {
     //% draggableParameters="image"
     //% weight=6
     //% group=Advanced
-    export function getRowsBlock(image: any, buf: Buffer, y: number) {
-        image = image.create(0, 0)
+    export function getRowsBlock(image: ScreenImage, buf: Buffer, y: number) {
         image.getRows(y, buf)
     }
     //% block="set row from buffer $buf to image $image at y $y"
     //% draggableParameters="image"
     //% weight=7
     //% group=Advanced
-    export function setRowsBlock(image: any, buf: Buffer, y: number) {
-        image = image.create(0, 0)
+    export function setRowsBlock(image: ScreenImage, buf: Buffer, y: number) {
         image.setRows(y, buf)
     }
 }
