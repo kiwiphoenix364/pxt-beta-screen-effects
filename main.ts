@@ -96,7 +96,7 @@ namespace screenEffects {
         }
     }
     //% block="set screen zoom to | $size times | with offset x $x y $y || over $ms ms"
-    //% weight=10
+    //% weight=35
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
     //% group=Zoom
@@ -113,7 +113,7 @@ namespace screenEffects {
         }
     }
     //% block="set zoomed out background image to $image"
-    //% weight=15
+    //% weight=30
     //% group=Zoom
     export function SetZoomedOutBackground (image: any) {
         bgimg = image
@@ -134,7 +134,7 @@ namespace screenEffects {
         }
     }
     //% block="set screen static effect to $size percent || over $ms ms"
-    //% weight=30
+    //% weight=10
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
     //% group=Static
