@@ -14,7 +14,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
         pixelArray.push(image.screenImage().getPixel(randint(0, 159), randint(0, 119)))
     }
     if (screenStatic > 0) {
-        for (let x = 0; x < 160; ++x) {
+        for (let x = 0; x < 120; ++x) {
             image1.getRows(x, buf)
             repeat = Math.ceil(screenStatic / 120 + randint(screenStatic, -100) / 100)
             for (let y = 0; y < repeat; ++y) {
@@ -161,12 +161,12 @@ namespace screenEffects {
     //% weight=6
     //% group=Advanced
     export function getRowsBlock(image: any, buf: Buffer, y: number) {
-        image.getRows(buf, y)
+        image.getRows(y, buf)
     }
     //% block="set row from buffer $buf to image $image at y $y"
     //% weight=7
     //% group=Advanced
     export function setRowsBlock(image: any, buf: Buffer, y: number) {
-        image.setRows(buf, y)
+        image.setRows(y, buf)
     }
 }
