@@ -170,7 +170,24 @@ namespace screenEffects {
     //% block="get row from image $image at y $y and put into buffer $buf"
     //% weight=60
     //% group=Advanced
-    export function getRowsBlock(image: Image, buf: Buffer, y: number) {
+    export function getRowsBlock(image = img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, buf: Buffer, y: number) {
         image.getRows(y, buf)
     }
     //% block="set row from buffer $buf to image $image at y $y"
