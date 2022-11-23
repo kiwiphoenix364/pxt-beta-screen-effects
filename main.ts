@@ -181,4 +181,10 @@ namespace screenEffects {
     export function setRowsBlock(image: Image, x: number, buf: Buffer) {
         image.setRows(x, buf)
     }
+    //% block="set value in buffer $buf at index $index to $value"
+    //% weight=80
+    //% group=Advanced
+    export function setBufferValueBlocks(buf: Buffer, index: number, value: number) {
+        buf[index] = value
+    }
 }
