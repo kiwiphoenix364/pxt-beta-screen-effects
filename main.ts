@@ -187,4 +187,10 @@ namespace screenEffects {
     export function setBufferValueBlocks(buf: Buffer, index: number, value: any) {
         buf[index] = value
     }
+    //% block="get value in buffer $buf at index $index"
+    //% weight=90
+    //% group=Advanced
+    export function getBufferValueBlocks(buf: Buffer, index: number) {
+        return buf[index]
+    }
 }
