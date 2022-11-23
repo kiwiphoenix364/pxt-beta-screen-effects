@@ -67,7 +67,7 @@ enum Mode {
 //% groups='["Static", "Zoom", "Pixelate"]'
 namespace screenEffects {
     //% block="set screen zoom to $size times with anchor $anchor || over $ms ms"
-    //% weight=32
+    //% weight=12
     //% picker.fieldEditor="gridpicker"
     //% picker.fieldOptions.width=220
     //% picker.fieldOptions.columns=1
@@ -96,7 +96,7 @@ namespace screenEffects {
         }
     }
     //% block="set screen zoom to | $size times | with offset x $x y $y || over $ms ms"
-    //% weight=31
+    //% weight=11
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
     //% group=Zoom
@@ -113,7 +113,7 @@ namespace screenEffects {
         }
     }
     //% block="set zoomed out background image to $image"
-    //% weight=30
+    //% weight=10
     //% group=Zoom
     export function SetZoomedOutBackground (image: any) {
         bgimg = image
@@ -134,7 +134,7 @@ namespace screenEffects {
         }
     }
     //% block="set screen static effect to $size percent || over $ms ms"
-    //% weight=10
+    //% weight=30
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
     //% group=Static
@@ -182,13 +182,13 @@ namespace screenEffects {
         image.setRows(x, buf)
     }
     //% block="set value in buffer $buf at index $index to $value"
-    //% weight=41
+    //% weight=40
     //% group=Advanced
     export function setBufferValueBlocks(buf: Buffer, index: number, value: number) {
         buf[index] = value
     }
     //% block="get value in buffer $buf at index $index"
-    //% weight=40
+    //% weight=41
     //% group=Advanced
     export function getBufferValueBlocks(buf: Buffer, index: number) {
         return buf[index]
