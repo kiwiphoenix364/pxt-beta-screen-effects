@@ -167,14 +167,14 @@ namespace screenEffects {
     export function createBuffer(size: number) {
         return Buffer.create(size)
     }
-    //% block="get row from image $image at x $x to buffer $buf"
+    //% block="get rows from image $image at x $x to buffer $buf"
     //% image.shadow=screen_image_picker
     //% weight=60
     //% group=Advanced
     export function getRowsBlock(image: Image, x: number, buf: Buffer) {
         image.getRows(x, buf)
     }
-    //% block="set row from buffer $buf to image $image at x $x"
+    //% block="set rows from buffer $buf to image $image at x $x"
     //% image.shadow=screen_image_picker
     //% weight=70
     //% group=Advanced
