@@ -67,7 +67,7 @@ enum Mode {
 //% groups='["Static", "Zoom", "Pixelate"]'
 namespace screenEffects {
     //% block="set screen zoom to $size times with anchor $anchor || over $ms ms"
-    //% weight=30
+    //% weight=32
     //% picker.fieldEditor="gridpicker"
     //% picker.fieldOptions.width=220
     //% picker.fieldOptions.columns=1
@@ -96,7 +96,7 @@ namespace screenEffects {
         }
     }
     //% block="set screen zoom to | $size times | with offset x $x y $y || over $ms ms"
-    //% weight=35
+    //% weight=31
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
     //% group=Zoom
@@ -113,7 +113,7 @@ namespace screenEffects {
         }
     }
     //% block="set zoomed out background image to $image"
-    //% weight=31
+    //% weight=30
     //% group=Zoom
     export function SetZoomedOutBackground (image: any) {
         bgimg = image
