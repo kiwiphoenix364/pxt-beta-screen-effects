@@ -184,7 +184,7 @@ namespace screenEffects {
     //% block="set value in buffer $buf at index $index to $value"
     //% weight=80
     //% group=Advanced
-    export function setBufferValueBlocks(buf: Buffer, index: number, value: number) {
+    export function setBufferValueBlocks(buf: Buffer, index: number, value: any) {
         buf[index] = value
     }
 }
