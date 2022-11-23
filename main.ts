@@ -156,39 +156,39 @@ namespace screenEffects {
     //% block="create renderable to screen $image on z-layer $z"
     //% draggableParameters="image"
     //% blockAllowMultiple=1
-    //% weight=40
+    //% weight=90
     //% group=Advanced
     export function createRenderable(z = 1, handler: (image: Image) => void) {
         scene.createRenderable(z, handler)
     }
     //% block="create buffer with size $size"
-    //% weight=50
+    //% weight=80
     //% group=Advanced
     export function createBuffer(size: number) {
         return Buffer.create(size)
     }
     //% block="get rows from image $image at x $x to buffer $buf"
     //% image.shadow=screen_image_picker
-    //% weight=60
+    //% weight=70
     //% group=Advanced
     export function getRowsBlock(image: Image, x: number, buf: Buffer) {
         image.getRows(x, buf)
     }
     //% block="set rows from buffer $buf to image $image at x $x"
     //% image.shadow=screen_image_picker
-    //% weight=70
+    //% weight=60
     //% group=Advanced
     export function setRowsBlock(image: Image, x: number, buf: Buffer) {
         image.setRows(x, buf)
     }
     //% block="set value in buffer $buf at index $index to $value"
-    //% weight=80
+    //% weight=50
     //% group=Advanced
     export function setBufferValueBlocks(buf: Buffer, index: number, value: number) {
         buf[index] = value
     }
     //% block="get value in buffer $buf at index $index"
-    //% weight=90
+    //% weight=40
     //% group=Advanced
     export function getBufferValueBlocks(buf: Buffer, index: number) {
         return buf[index]
