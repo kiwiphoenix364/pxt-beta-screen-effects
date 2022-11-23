@@ -42,23 +42,23 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
     
 })
 enum Mode {
-    //% block="Center"
+    //% block="center"
     Center,
-    //% block="Top-Left"
+    //% block="top-left"
     TopLeft,
-    //% block="Top"
+    //% block="top"
     Top,
-    //% block="Top-Right"
+    //% block="top-right"
     TopRight,
-    //% block="Left"
+    //% block="left"
     Left,
-    //% block="Right"
+    //% block="right"
     Right,
-    //% block="Bottom-Left"
+    //% block="bottom-left"
     BottomLeft,
-    //% block="Bottom"
+    //% block="bottom"
     Bottom,
-    //% block="Bottom-Right"
+    //% block="bottom-right"
     BottomRight
 }
 //% weight=50 color="#003AFF" icon="\uf125"
