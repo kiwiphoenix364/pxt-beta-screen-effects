@@ -67,7 +67,7 @@ enum Mode {
 //% groups='["Static", "Zoom", "Pixelate"]'
 namespace screenEffects {
     //% block="set screen zoom to $size times with anchor $anchor || over $ms ms"
-    //% weight=31
+    //% weight=30
     //% picker.fieldEditor="gridpicker"
     //% picker.fieldOptions.width=220
     //% picker.fieldOptions.columns=1
@@ -113,7 +113,7 @@ namespace screenEffects {
         }
     }
     //% block="set zoomed out background image to $image"
-    //% weight=30
+    //% weight=31
     //% group=Zoom
     export function SetZoomedOutBackground (image: any) {
         bgimg = image
