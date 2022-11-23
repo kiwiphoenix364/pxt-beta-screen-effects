@@ -1,6 +1,6 @@
 {
     "name": "pxt-beta-screen-effects - Copy",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "",
     "dependencies": {
         "device": "*"
