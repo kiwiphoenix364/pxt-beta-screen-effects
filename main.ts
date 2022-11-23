@@ -151,11 +151,11 @@ namespace screenEffects {
     export function createRenderable(z = 1, handler: (image: Image) => void) {
         scene.createRenderable(z, handler)
     }
-    //% block="create buffer $buf size $size"
+    //% block="create buffer with size $size"
     //% weight=5
     //% group=Advanced
-    export function createBuffer(buf: Buffer, size: number) {
-        Buffer.create(size)
+    export function createBuffer(size: number) {
+        return Buffer.create(size)
     }
     //% block="get row at y $y from image $image and put into buffer $buf"
     //% weight=6
