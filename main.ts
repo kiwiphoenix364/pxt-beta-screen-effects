@@ -166,7 +166,7 @@ namespace screenEffects {
     //% block="set row from buffer $buf to image $image at y $y"
     //% weight=7
     //% group=Advanced
-    export function setRowsBlock(image: Image = img`
+    export function setRowsBlock(image: any = img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
