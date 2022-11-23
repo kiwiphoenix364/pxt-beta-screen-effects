@@ -64,7 +64,7 @@ enum Mode {
 //% weight=50 color="#003AFF" icon="\uf125"
 //% block="Screen Effects"
 //% icon="\uf125"
-//% groups='["Static", "Zoom", "Pixelate"]'
+//% groups='["Zoom", "Pixelate", "Static", "Advanced"]'
 namespace screenEffects {
     //% block="set screen zoom to $size times with anchor $anchor || over $ms ms"
     //% weight=12
