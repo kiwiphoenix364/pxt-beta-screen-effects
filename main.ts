@@ -155,7 +155,7 @@ namespace screenEffects {
     //% weight=5
     //% group=Advanced
     export function createBuffer(buf: Buffer, size: number) {
-        buf = Buffer.create(size)
+        Buffer.create(size)
     }
     //% block="get row at y $y from image $image and put into buffer $buf"
     //% weight=6
