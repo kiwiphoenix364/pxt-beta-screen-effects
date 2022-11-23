@@ -162,23 +162,23 @@ namespace screenEffects {
     //% group=Advanced
     export function getRowsBlock(image: any, buf: Buffer, y: number) {
         img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`.getRows(y, buf)
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+            f f f f f f f f f f f f f f f f
+        `.getRows(y, buf)
     }
     //% block="set row from buffer $buf to image $image at y $y"
     //% weight=7
