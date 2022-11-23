@@ -8,6 +8,7 @@ let blurSize1 = 1
 let screenStatic = 0
 let pixelArray = [0]
 let repeat = 0
+let bgimg = image.create(0, 0)
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
     pixelArray = []
     for (let i = 0; i < 15; i++) {
@@ -30,7 +31,9 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
     helpers.imageBlit(screenClone, (tempImg.width * blurSize1 - 160) / -2, (tempImg.height * blurSize1 - 120) / -2, tempImg.width * blurSize1, tempImg.height * blurSize1, tempImg, 0, 0, tempImg.width, tempImg.height, true, false)
     }
     if (zoomSize1 != 1) {
-        image1.fillRect(0, 0, 160, 120, 15)
+        if (zoomSize1 < 1) {
+            image1 = bgimg
+        }
         helpers.imageBlit(image1, x1, y1, 160 * zoomSize1, 120 * zoomSize1, screenClone, 0, 0, 160, 120, true, false)
     } else {
         helpers.imageBlit(image1, 0, 0, 160, 120, screenClone, 0, 0, 160, 120, true, false)
@@ -92,7 +95,7 @@ namespace screenEffects {
         }
     }
     //% block="set screen zoom to | $size times | with offset x $x y $y || over $ms ms"
-    //% weight=1
+    //% weight=10
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
     //% group=Zoom
@@ -108,8 +111,14 @@ namespace screenEffects {
             pause(25)
         }
     }
+    //% block="set zoomed out background image to $image"
+    //% weight=15
+    //% group=Zoom
+    export function SetZoomedOutBackground (image: any) {
+        bgimg = image
+    }
     //% block="pixelate screen image to pixel size $size || over $ms ms"
-    //% weight=2
+    //% weight=20
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
     //% group=Pixelate
@@ -124,7 +133,7 @@ namespace screenEffects {
         }
     }
     //% block="set screen static effect to $size percent || over $ms ms"
-    //% weight=3
+    //% weight=30
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
     //% group=Static
@@ -146,25 +155,25 @@ namespace screenEffects {
     //% block="create renderable to screen $image on z-layer $z"
     //% draggableParameters="image"
     //% blockAllowMultiple=1
-    //% weight=4
+    //% weight=40
     //% group=Advanced
     export function createRenderable(z = 1, handler: (image: Image) => void) {
         scene.createRenderable(z, handler)
     }
     //% block="create buffer with size $size"
-    //% weight=5
+    //% weight=50
     //% group=Advanced
     export function createBuffer(size: number) {
         return Buffer.create(size)
     }
     //% block="get row from image $image at y $y and put into buffer $buf"
-    //% weight=6
+    //% weight=60
     //% group=Advanced
     export function getRowsBlock(image: Image, buf: Buffer, y: number) {
         image.getRows(y, buf)
     }
     //% block="set row from buffer $buf to image $image at y $y"
-    //% weight=7
+    //% weight=70
     //% group=Advanced
     export function setRowsBlock(image: Image, buf: Buffer, y: number) {
         image.setRows(y, buf)
