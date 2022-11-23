@@ -143,7 +143,7 @@ namespace screenEffects {
             pause(25)
         }
     }
-    //% block="create renderable to screen $image || on z-layer $z"
+    //% block="create renderable to screen $image on z-layer $z"
     //% draggableParameters="image"
     //% blockAllowMultiple=1
     //% weight=4
@@ -157,7 +157,7 @@ namespace screenEffects {
     export function createBuffer(size: number) {
         return Buffer.create(size)
     }
-    //% block="get row at y $y from image $image and put into buffer $buf"
+    //% block="get row from image $image at y $y and put into buffer $buf"
     //% weight=6
     //% group=Advanced
     export function getRowsBlock(image: any, buf: Buffer, y: number) {
