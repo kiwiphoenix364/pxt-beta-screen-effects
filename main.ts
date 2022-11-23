@@ -67,7 +67,7 @@ enum Mode {
 //% groups='["Static", "Zoom", "Pixelate"]'
 namespace screenEffects {
     //% block="set screen zoom to $size times with anchor $anchor || over $ms ms"
-    //% weight=2
+    //% weight=31
     //% picker.fieldEditor="gridpicker"
     //% picker.fieldOptions.width=220
     //% picker.fieldOptions.columns=1
