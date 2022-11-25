@@ -107,9 +107,9 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = (size - zoomSize1) / (ms / 25)
+        memSize1 = size - zoomSize1
         for (let j = 0; j < (ms / 25); j++) {
-            zoomSize1 += memSize1
+            zoomSize1 += memSize1 / (ms / 25)
             x1 = -x + 80 - zoomSize1 * 80
             y1 = -y + 60 - zoomSize1 * 60
             pause(25)
@@ -130,9 +130,9 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = (size - zoomSize1) / (ms / 25)
+        memSize1 = size - zoomSize1
         for (let j = 0; j < (ms / 25); j++) {
-            blurSize1 += memSize1
+            blurSize1 += memSize1 / (ms / 25)
             pause(25)
         }
     }
@@ -150,11 +150,9 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = (size - zoomSize1) / (ms / 25)
+        memSize1 = size - zoomSize1
         for (let j = 0; j < (ms / 25); j++) {
-
-            info.setScore(memSize1)
-            screenStatic += memSize1
+            screenStatic += memSize1 / (ms / 25)
             pause(25)
         }
     }
