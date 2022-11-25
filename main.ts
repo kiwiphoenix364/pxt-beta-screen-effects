@@ -131,9 +131,10 @@ namespace screenEffects {
             ms = 25
         }
         memSize1 = (size - blurSize1) / (ms / 25)
+        info.setScore(memSize1 * 100)
         for (let j = 0; j < (ms / 25); j++) {
 
-            info.setScore(memSize1 * 100)
+            
             blurSize1 += memSize1
             pause(25)
         }
