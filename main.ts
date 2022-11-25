@@ -17,7 +17,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
     let screenClone = image1.clone()
     if (screenStatic > 0) {
         for (let x = 0; x < 160; ++x) {
-            screenClone.getRows((Math.round(x / blurSize1) * blurSize1) / zoomSize1 - x1, buf)
+            screenClone.getRows((Math.round(x / blurSize1) * blurSize1) / zoomSize1 + x1, buf)
             repeat = Math.ceil(screenStatic / 120 + randint(screenStatic, -100) / 100)
             for (let y = 0; y < repeat; ++y) {
                 buf[randint(0, 119)] = pixelArray[randint(0, 14)]
