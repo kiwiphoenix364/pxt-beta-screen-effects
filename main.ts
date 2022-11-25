@@ -85,14 +85,14 @@ namespace screenEffects {
         for (let i = 0; i < (ms / 25); i++) {
             zoomSize1 += memSize1 / (ms / 25)
             if (anchor == 0 || anchor == 2 || anchor == 7) {
-                x1 = 80 - 80 * zoomSize1
+                x1 = 80 - 80 / zoomSize1
             } else if (anchor == 3 || anchor == 5 || anchor == 8) {
-                x1 = 160 - (160 * zoomSize1)
+                x1 = 160 - (160 / zoomSize1)
             }
             if (anchor == 0 || anchor == 4 || anchor == 5) {
-                y1 = 60 - 60 * zoomSize1
+                y1 = 60 - 60 / zoomSize1
             } else if (anchor == 6 || anchor == 7 || anchor == 8) {
-                y1 = 120 - (120 * zoomSize1)
+                y1 = 120 - (120 / zoomSize1)
             }
             pause(25)
         }
