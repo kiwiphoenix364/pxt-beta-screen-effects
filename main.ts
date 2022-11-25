@@ -10,6 +10,7 @@ let pixelArray = [0]
 let repeat = 0
 let bgimg = image.create(0, 0)
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
+    let screenClone = image1.clone()
     pixelArray = []
     for (let i = 0; i < 15; i++) {
         pixelArray.push(image.screenImage().getPixel(randint(0, 159), randint(0, 119)))
@@ -21,15 +22,16 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             for (let y = 0; y < repeat; ++y) {
                 buf[randint(0,119)] = pixelArray[randint(0,14)]
             }
-            image1.setRows(x, buf)
+            image1.setRows(Math.imul(zoomSize1, Math.imul(blurSize1, Math.idiv(blurSize1, x))) - Math.imul(zoomSize1 - 1, 60), buf)
         }
     }    
-    let screenClone = image1.clone()
+    /*
     if (blurSize1 != 1) {
     let tempImg = image.create(Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1))
     helpers.imageBlit(tempImg, 0, 0, Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1), screenClone, 0, 0, 160, 120, true, false)
     helpers.imageBlit(screenClone, (tempImg.width * blurSize1 - 160) / -2, (tempImg.height * blurSize1 - 120) / -2, tempImg.width * blurSize1, tempImg.height * blurSize1, tempImg, 0, 0, tempImg.width, tempImg.height, true, false)
     }
+    
     if (zoomSize1 != 1) {
         if (zoomSize1 < 1) {
             image1.fillRect(0, 0, 160, 120, 15)
@@ -39,6 +41,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
     } else {
         helpers.imageBlit(image1, 0, 0, 160, 120, screenClone, 0, 0, 160, 120, true, false)
     }
+    */
     
 })
 enum Mode {
