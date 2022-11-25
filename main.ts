@@ -15,7 +15,6 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
         pixelArray.push(image.screenImage().getPixel(randint(0, 159), randint(0, 119)))
     }
     let screenClone = image1.clone()
-    if (screenStatic > 0) {
         for (let x = 0; x < 160; ++x) {
             screenClone.getRows((Math.round(x / blurSize1) * blurSize1) / zoomSize1 + x1, buf)
             repeat = Math.ceil(screenStatic / 120 + randint(screenStatic, -100) / 100)
@@ -24,7 +23,13 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             }
             image1.setRows(x, buf)
         }
-    }
+        screenClone = image1.clone()
+        helpers.imageRotated(screenClone, 90)
+        for (let y = 0; y < 120; ++y) {
+            screenClone.getRows((Math.round(y / blurSize1) * blurSize1) / zoomSize1 + y1, buf)
+            image1.setRows(y, buf)
+        }
+        helpers.imageRotated(image1, 270)
     /*
     if (blurSize1 != 1) {
         let tempImg = image.create(Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1))
