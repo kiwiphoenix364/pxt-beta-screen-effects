@@ -24,12 +24,12 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             image1.setRows(x, buf)
         }
         helpers.imageBlit(screenClone, 0, 0, 160, 120, image1, 0, 0, 160, 120, true, false)
-        helpers.imageRotated(screenClone, 90)
+        
         for (let y = 0; y < 120; ++y) {
             screenClone.getRows((Math.round(y / blurSize1) * blurSize1) / zoomSize1 + y1, buf)
             screenClone.setRows(y, buf)
         }
-        helpers.imageRotated(image1, 270)
+        
         helpers.imageBlit(image1, 0, 0, 160, 120, screenClone, 0, 0, 160, 120, true, false)
     /*
     if (blurSize1 != 1) {
