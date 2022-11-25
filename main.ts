@@ -27,9 +27,10 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
         helpers.imageRotated(screenClone, 90)
         for (let y = 0; y < 120; ++y) {
             screenClone.getRows((Math.round(y / blurSize1) * blurSize1) / zoomSize1 + y1, buf)
-            image1.setRows(y, buf)
+            screenClone.setRows(y, buf)
         }
         helpers.imageRotated(image1, 270)
+        image1 = screenClone.clone()
     /*
     if (blurSize1 != 1) {
         let tempImg = image.create(Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1))
