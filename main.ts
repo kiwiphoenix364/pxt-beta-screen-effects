@@ -22,7 +22,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             for (let y = 0; y < repeat; ++y) {
                 buf[randint(0,119)] = pixelArray[randint(0,14)]
             }
-            image1.setRows(Math.imul(zoomSize1, Math.imul(blurSize1, Math.idiv(blurSize1, x))) - Math.imul(zoomSize1 - 1, 60), buf)
+            image1.setRows(Math.imul(blurSize1, Math.idiv(blurSize1, x)), buf)
         }
     }    
     /*
