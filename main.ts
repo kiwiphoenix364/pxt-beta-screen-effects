@@ -130,7 +130,7 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = size - zoomSize1
+        memSize1 = size - blurSize1
         for (let j = 0; j < (ms / 25); j++) {
             blurSize1 += memSize1 / (ms / 25)
             pause(25)
@@ -150,7 +150,7 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = size - zoomSize1
+        memSize1 = size - screenStatic
         for (let j = 0; j < (ms / 25); j++) {
             screenStatic += memSize1 / (ms / 25)
             pause(25)
