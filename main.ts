@@ -24,6 +24,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             image1.setRows(x, buf)
         }
     }
+    /*
     let screenClone = image1.clone()
     if (blurSize1 != 1) {
         let tempImg = image.create(Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1))
@@ -39,7 +40,8 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
     } else {
         helpers.imageBlit(image1, 0, 0, 160, 120, screenClone, 0, 0, 160, 120, true, false)
     }
-
+*/
+info.setScore(blurSize1)
 })
 enum Mode {
     //% block="center"
