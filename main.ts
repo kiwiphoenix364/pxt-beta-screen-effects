@@ -14,25 +14,17 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
     for (let i = 0; i < 15; i++) {
         pixelArray.push(image.screenImage().getPixel(randint(0, 159), randint(0, 119)))
     }
-    let screenClone = image1.clone()
+    if (screenStatic > 0) {
         for (let x = 0; x < 160; ++x) {
-            screenClone.getRows((Math.round(x / blurSize1) * blurSize1) / zoomSize1 + x1, buf)
+            image1.getRows(x, buf)
             repeat = Math.ceil(screenStatic / 120 + randint(screenStatic, -100) / 100)
             for (let y = 0; y < repeat; ++y) {
                 buf[randint(0, 119)] = pixelArray[randint(0, 14)]
             }
             image1.setRows(x, buf)
         }
-    helpers.imageBlit(screenClone, 0, 0, 160, 120, image1, 0, 0, 160, 120, true, false)
-        helpers.imageRotated(screenClone, 180)
-        for (let y = 0; y < 120; ++y) {
-            screenClone.getRows((Math.round(y / blurSize1) * blurSize1) / zoomSize1 + y1, buf)
-            screenClone.setRows(y, buf)
-        }
-        helpers.imageRotated(screenClone, 180)
-        helpers.imageBlit(image1, 0, 0, 160, 120, screenClone, 0, 0, 160, 120, true, false)
-        
-    /*
+    }
+    let screenClone = image1.clone()
     if (blurSize1 != 1) {
         let tempImg = image.create(Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1))
         helpers.imageBlit(tempImg, 0, 0, Math.ceil(160 / blurSize1), Math.ceil(120 / blurSize1), screenClone, 0, 0, 160, 120, true, false)
@@ -47,8 +39,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
     } else {
         helpers.imageBlit(image1, 0, 0, 160, 120, screenClone, 0, 0, 160, 120, true, false)
     }
-*/
-info.setScore(blurSize1)
+
 })
 enum Mode {
     //% block="center"
@@ -92,14 +83,14 @@ namespace screenEffects {
         for (let i = 0; i < (ms / 25); i++) {
             zoomSize1 += memSize1 / (ms / 25)
             if (anchor == 0 || anchor == 2 || anchor == 7) {
-                x1 = 80 - 80 / zoomSize1
+                x1 = 80 - 80 * zoomSize1
             } else if (anchor == 3 || anchor == 5 || anchor == 8) {
-                x1 = 160 - (160 / zoomSize1)
+                x1 = 160 - (160 * zoomSize1)
             }
             if (anchor == 0 || anchor == 4 || anchor == 5) {
-                y1 = 60 - 60 / zoomSize1
+                y1 = 60 - 60 * zoomSize1
             } else if (anchor == 6 || anchor == 7 || anchor == 8) {
-                y1 = 120 - (120 / zoomSize1)
+                y1 = 120 - (120 * zoomSize1)
             }
             pause(25)
         }
