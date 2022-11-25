@@ -82,9 +82,9 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = size - zoomSize1
+        memSize1 = (size - zoomSize1) / (ms / 25)
         for (let i = 0; i < (ms / 25); i++) {
-            zoomSize1 += memSize1 / (ms / 25)
+            zoomSize1 += memSize1
             if (anchor == 0 || anchor == 2 || anchor == 7) {
                 x1 = 80 - 80 * zoomSize1
             } else if (anchor == 3 || anchor == 5 || anchor == 8) {
@@ -107,9 +107,9 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = size - zoomSize1
+        memSize1 = (size - zoomSize1) / (ms / 25)
         for (let j = 0; j < (ms / 25); j++) {
-            zoomSize1 += memSize1 / (ms / 25)
+            zoomSize1 += memSize1
             x1 = -x + 80 - zoomSize1 * 80
             y1 = -y + 60 - zoomSize1 * 60
             pause(25)
@@ -130,9 +130,9 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = size - blurSize1
+        memSize1 = (size - blurSize1) / (ms / 25)
         for (let j = 0; j < (ms / 25); j++) {
-            blurSize1 += memSize1 / (ms / 25)
+            blurSize1 += memSize1
             pause(25)
         }
     }
@@ -150,9 +150,9 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = size - screenStatic
+        memSize1 = (size - screenStatic) / (ms / 25)
         for (let j = 0; j < (ms / 25); j++) {
-            screenStatic += memSize1 / (ms / 25)
+            screenStatic += memSize1
             pause(25)
         }
     }
