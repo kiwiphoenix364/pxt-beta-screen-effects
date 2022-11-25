@@ -82,9 +82,9 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = (size - zoomSize1) / (ms / 25)
+        memSize1 = size - zoomSize1
         for (let i = 0; i < (ms / 25); i++) {
-            zoomSize1 += memSize1
+            zoomSize1 += memSize1 / (ms / 25)
             if (anchor == 0 || anchor == 2 || anchor == 7) {
                 x1 = 80 - 80 * zoomSize1
             } else if (anchor == 3 || anchor == 5 || anchor == 8) {
@@ -107,9 +107,9 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = (size - zoomSize1) / (ms / 25)
+        memSize1 = size - zoomSize1
         for (let j = 0; j < (ms / 25); j++) {
-            zoomSize1 += memSize1
+            zoomSize1 += memSize1 / (ms / 25)
             x1 = -x + 80 - zoomSize1 * 80
             y1 = -y + 60 - zoomSize1 * 60
             pause(25)
@@ -118,7 +118,7 @@ namespace screenEffects {
     //% block="set zoomed out background image to $image"
     //% weight=10
     //% group=Zoom
-    export function SetZoomedOutBackground (image: any) {
+    export function SetZoomedOutBackground(image: any) {
         bgimg = image
     }
     //% block="pixelate screen image to pixel size $size || over $ms ms"
@@ -130,12 +130,9 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = (size - blurSize1) / (ms / 25)
-        info.setScore(memSize1 * 100)
+        memSize1 = size - blurSize1
         for (let j = 0; j < (ms / 25); j++) {
-
-            
-            blurSize1 += memSize1
+            blurSize1 += memSize1 / (ms / 25)
             pause(25)
         }
     }
@@ -153,9 +150,9 @@ namespace screenEffects {
         if (ms < 25) {
             ms = 25
         }
-        memSize1 = (size - screenStatic) / (ms / 25)
+        memSize1 = size - screenStatic
         for (let j = 0; j < (ms / 25); j++) {
-            screenStatic += memSize1
+            screenStatic += memSize1 / (ms / 25)
             pause(25)
         }
     }
