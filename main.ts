@@ -152,6 +152,8 @@ namespace screenEffects {
         }
         memSize1 = (size - zoomSize1) / (ms / 25)
         for (let j = 0; j < (ms / 25); j++) {
+
+            info.setScore(memSize1)
             screenStatic += memSize1
             pause(25)
         }
