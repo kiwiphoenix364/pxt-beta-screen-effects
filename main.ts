@@ -12,11 +12,11 @@ let bgimg = image.create(0, 0)
 let fastrandom = new Math.FastRandom(randint(0,999))
 fastrandom.randomRange(0,15)
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
-    pixelArray = []
-    for (let i = 0; i < 16; i++) {
-        pixelArray.push(image.screenImage().getPixel(randint(0, 159), randint(0, 119)))
-    }
     if (screenStatic > 0) {
+        pixelArray = []
+        for (let i = 0; i < 16; i++) {
+            pixelArray.push(image.screenImage().getPixel(randint(0, 159), randint(0, 119)))
+        }
         for (let x = 0; x < 160; ++x) {
             image1.getRows(x, buf)
             for (let y = 0; y < 120; ++y) {
