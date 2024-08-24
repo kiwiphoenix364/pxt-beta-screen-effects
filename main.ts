@@ -10,7 +10,6 @@ let pixelArray = [0]
 let repeat = 0
 let bgimg = image.create(0, 0)
 let fastrandom = new Math.FastRandom(randint(0,999))
-fastrandom.randomRange(0,15)
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
     if (screenStatic > 0) {
         pixelArray = []
@@ -21,8 +20,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             image1.getRows(x, buf)
             for (let y = 0; y < 120; ++y) {
                 if (Math.percentChance(screenStatic)) {
-                    buf[y] = (pixelArray[fastrandom.next()]) 
-                    console.log(fastrandom.next())
+                    buf[y] = (pixelArray[fastrandom.next() % 16]) 
                 }
             }
             image1.setRows(x, buf)
