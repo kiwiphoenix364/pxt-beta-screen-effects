@@ -19,7 +19,7 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
             image1.getRows(x, buf)
             for (let y = 0; y < 119; ++y) {
                 if (Math.percentChance(screenStatic)) {
-                    buf[y] = (pixelArray[(Math.imul(y, x) + y + x) % 16])
+                    buf[y] = (pixelArray[(Math.imul(y, x) ** 3) % 16])
                 }
             }
             image1.setRows(x, buf)
