@@ -11,15 +11,15 @@ let repeat = 0
 let bgimg = image.create(0, 0)
 let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Camera) => {
     pixelArray = []
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 16; i++) {
         pixelArray.push(image.screenImage().getPixel(randint(0, 159), randint(0, 119)))
     }
     if (screenStatic > 0) {
         for (let x = 0; x < 160; ++x) {
             image1.getRows(x, buf)
-            for (let y = 0; y < 159; ++y) {
+            for (let y = 0; y < 119; ++y) {
                 if (Math.percentChance(screenStatic)) {
-                    buf[y] = (pixelArray[(y ** x) % 15])
+                    buf[y] = (pixelArray[(y ** x) % 16])
                 }
             }
             image1.setRows(x, buf)
