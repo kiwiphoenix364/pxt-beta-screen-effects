@@ -20,8 +20,8 @@ let variable = scene.createRenderable(zLayer1, (image1: Image, camera: scene.Cam
         for (let x = 0; x < 160; ++x) {
             image1.getRows(x, buf)
             for (let y = 0; y < 120; ++y) {
-                if (fastrandom.percentChance(screenStatic)) {
-                    buf[y] = (pixelArray[fastrandom.randomRange(0,15)])
+                if (Math.percentChance(screenStatic)) {
+                    buf[y] = (pixelArray[randint(0,15)])
                 }
             }
             image1.setRows(x, buf)
