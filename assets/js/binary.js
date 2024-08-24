@@ -1,5 +1,5 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.56/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.12","target":"arcade","targetVersion":"1.12.56","repo":"kiwiphoenix364/pxt-beta-screen-effects"}
-// total=1253888 new=6.50% cached=87.88% other=5.63%
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.56/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.13","target":"arcade","targetVersion":"1.12.56","repo":"kiwiphoenix364/pxt-beta-screen-effects"}
+// total=1253871 new=6.50% cached=87.88% other=5.63%
 (function (ectx) {
 'use strict';
 const runtime = ectx.runtime;
@@ -429,7 +429,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P22866(s) {
+function _main___P24742(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -827,38 +827,38 @@ switch (step) {
     s.callLocIdx = 62; s.pc = 36; return s.tmp_0;
   case 36:
     r0 = s.retval;
-    globals.y1___22378 = (0);
-    globals.x1___22380 = (0);
-    globals.zoomSize1___22384 = (1);
+    globals.y1___24253 = (0);
+    globals.x1___24255 = (0);
+    globals.zoomSize1___24259 = (1);
     r0 = pxsim.control.createBuffer(120);
-    globals.buf___22387 = (r0);
-    globals.blurSize1___22392 = (1);
-    globals.screenStatic___22394 = (0);
+    globals.buf___24262 = (r0);
+    globals.blurSize1___24267 = (1);
+    globals.screenStatic___24269 = (0);
     r0 = pxsim_Array__mk();
     s.tmp_0 = r0;
     r0 = pxsim_Array__push(s.tmp_0, 0);
-    globals.pixelArray___22396 = (s.tmp_0);
+    globals.pixelArray___24271 = (s.tmp_0);
     r0 = pxsim.image.create(0, 0);
-    globals.bgimg___22401 = (r0);
+    globals.bgimg___24276 = (r0);
     s.tmp_0 = scene_createRenderable__P2806_mk(s);
     s.tmp_0.arg0 = 1;
-    s.tmp_0.arg1 = variable_inline__P22408;
+    s.tmp_0.arg1 = variable_inline__P24283;
     s.tmp_0.arg2 = undefined;
     s.callLocIdx = 71; s.pc = 37; return s.tmp_0;
   case 37:
     r0 = s.retval;
-    globals.variable___22404 = (r0);
+    globals.variable___24279 = (r0);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-_main___P22866.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
-_main___P22866.continuations = [  ]
+_main___P24742.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
+_main___P24742.continuations = [  ]
 
-function _main___P22866_mk(s) {
+function _main___P24742_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P22866, depth: s.depth + 1,
+        parent: s, fn: _main___P24742, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1397,7 +1397,7 @@ function gameOverConfig_inline__P4947_mk(s) {
 
 
 
-function variable_inline__P22408(s) {
+function variable_inline__P24283(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1407,25 +1407,25 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.i___22413 = undefined;
-    s.x___22431 = undefined;
-    s.y___22440 = undefined;
-    s.screenClone___22468 = undefined;
-    s.tempImg___22474 = undefined;
+    s.i___24288 = undefined;
+    s.x___24306 = undefined;
+    s.y___24315 = undefined;
+    s.screenClone___24344 = undefined;
+    s.tempImg___24350 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
       s.lambdaArgs = null;
     }
     r0 = pxsim_Array__mk();
-    globals.pixelArray___22396 = (r0);
-    s.i___22413 = (0);
+    globals.pixelArray___24271 = (r0);
+    s.i___24288 = (0);
   case 1:
-    r0 = (s.i___22413 < 16);
+    r0 = (s.i___24288 < 16);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 2; continue; }
-    s.tmp_1 = r0 = globals.pixelArray___22396;
+    s.tmp_1 = r0 = globals.pixelArray___24271;
     r0 = globals.screen___2033;
     s.tmp_3 = r0;
     r0 = pxsim.Math_.randomRange(0, 159);
@@ -1435,41 +1435,40 @@ switch (step) {
     r0 = pxsim_ImageMethods.getPixel(s.tmp_3, s.tmp_4, s.tmp_5);
     s.tmp_2 = r0;
     r0 = pxsim_Array__push(s.tmp_1, s.tmp_2);
-    r0 = (s.i___22413 + 1);
-    s.i___22413 = (r0);
+    r0 = (s.i___24288 + 1);
+    s.i___24288 = (r0);
     { step = 1; continue; }
   case 2:
-    r0 = (globals.screenStatic___22394 > 0);
+    r0 = (globals.screenStatic___24269 > 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 9; continue; }
-    s.x___22431 = (0);
+    s.x___24306 = (0);
   case 3:
-    r0 = (s.x___22431 < 160);
+    r0 = (s.x___24306 < 160);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 8; continue; }
-    r0 = pxsim_ImageMethods.getRows(s.arg0, s.x___22431, globals.buf___22387);
-    s.y___22440 = (0);
+    r0 = pxsim_ImageMethods.getRows(s.arg0, s.x___24306, globals.buf___24262);
+    s.y___24315 = (0);
   case 4:
-    r0 = (s.y___22440 < 119);
+    r0 = (s.y___24315 < 119);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 7; continue; }
     s.tmp_2 = Math_percentChance__P3058_mk(s);
-    s.tmp_2.arg0 = globals.screenStatic___22394;
+    s.tmp_2.arg0 = globals.screenStatic___24269;
     s.callLocIdx = 64; s.pc = 17; return s.tmp_2;
   case 17:
     r0 = s.retval;
     s.tmp_1 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_1);
     if (!r0) { step = 5; continue; }
-    s.tmp_3 = r0 = globals.buf___22387;
-    s.tmp_4 = r0 = s.y___22440;
-    s.tmp_6 = r0 = globals.pixelArray___22396;
-    r0 = pxsim.Math_.pow(s.y___22440, 2);
-    s.tmp_9 = r0;
-    r0 = pxsim.Math_.pow(s.x___22431, 2);
+    s.tmp_3 = r0 = globals.buf___24262;
+    s.tmp_4 = r0 = s.y___24315;
+    s.tmp_6 = r0 = globals.pixelArray___24271;
+    s.tmp_9 = r0 = s.y___24315;
+    r0 = pxsim.Math_.imul(s.y___24315, s.x___24306);
     s.tmp_10 = r0;
     r0 = pxsim.Math_.imul(s.tmp_9, s.tmp_10);
     s.tmp_8 = r0;
@@ -1480,46 +1479,46 @@ switch (step) {
     r0 = pxsim.BufferMethods.setByte(s.tmp_3, s.tmp_4, s.tmp_5);
   case 5:
   case 6:
-    r0 = (s.y___22440 + 1);
-    s.y___22440 = (r0);
+    r0 = (s.y___24315 + 1);
+    s.y___24315 = (r0);
     { step = 4; continue; }
   case 7:
-    r0 = pxsim_ImageMethods.setRows(s.arg0, s.x___22431, globals.buf___22387);
-    r0 = (s.x___22431 + 1);
-    s.x___22431 = (r0);
+    r0 = pxsim_ImageMethods.setRows(s.arg0, s.x___24306, globals.buf___24262);
+    r0 = (s.x___24306 + 1);
+    s.x___24306 = (r0);
     { step = 3; continue; }
   case 8:
   case 9:
   case 10:
     r0 = pxsim_ImageMethods.clone(s.arg0);
-    s.screenClone___22468 = (r0);
-    r0 = (globals.blurSize1___22392 != 1);
+    s.screenClone___24344 = (r0);
+    r0 = (globals.blurSize1___24267 != 1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 11; continue; }
-    r0 = (160 / globals.blurSize1___22392);
+    r0 = (160 / globals.blurSize1___24267);
     s.tmp_2 = r0;
     r0 = pxsim.Math_.ceil(s.tmp_2);
     s.tmp_1 = r0;
-    r0 = (120 / globals.blurSize1___22392);
+    r0 = (120 / globals.blurSize1___24267);
     s.tmp_4 = r0;
     r0 = pxsim.Math_.ceil(s.tmp_4);
     s.tmp_3 = r0;
     r0 = pxsim.image.create(s.tmp_1, s.tmp_3);
-    s.tempImg___22474 = (r0);
+    s.tempImg___24350 = (r0);
     s.tmp_0 = helpers_imageBlit__P1954_mk(s);
-    s.tmp_0.arg0 = s.tempImg___22474;
+    s.tmp_0.arg0 = s.tempImg___24350;
     s.tmp_0.arg1 = 0;
     s.tmp_0.arg2 = 0;
-    r0 = (160 / globals.blurSize1___22392);
+    r0 = (160 / globals.blurSize1___24267);
     s.tmp_1 = r0;
     r0 = pxsim.Math_.ceil(s.tmp_1);
     s.tmp_0.arg3 = r0;
-    r0 = (120 / globals.blurSize1___22392);
+    r0 = (120 / globals.blurSize1___24267);
     s.tmp_2 = r0;
     r0 = pxsim.Math_.ceil(s.tmp_2);
     s.tmp_0.arg4 = r0;
-    s.tmp_0.arg5 = s.screenClone___22468;
+    s.tmp_0.arg5 = s.screenClone___24344;
     s.tmp_0.arg6 = 0;
     s.tmp_0.arg7 = 0;
     s.tmp_0.arg8 = 160;
@@ -1530,37 +1529,37 @@ switch (step) {
   case 18:
     r0 = s.retval;
     s.tmp_0 = helpers_imageBlit__P1954_mk(s);
-    s.tmp_0.arg0 = s.screenClone___22468;
-    r0 = pxsim_ImageMethods.width(s.tempImg___22474);
+    s.tmp_0.arg0 = s.screenClone___24344;
+    r0 = pxsim_ImageMethods.width(s.tempImg___24350);
     s.tmp_3 = r0;
-    r0 = (s.tmp_3 * globals.blurSize1___22392);
+    r0 = (s.tmp_3 * globals.blurSize1___24267);
     s.tmp_2 = r0;
     r0 = (s.tmp_2 - 160);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 / -2);
     s.tmp_0.arg1 = r0;
-    r0 = pxsim_ImageMethods.height(s.tempImg___22474);
+    r0 = pxsim_ImageMethods.height(s.tempImg___24350);
     s.tmp_6 = r0;
-    r0 = (s.tmp_6 * globals.blurSize1___22392);
+    r0 = (s.tmp_6 * globals.blurSize1___24267);
     s.tmp_5 = r0;
     r0 = (s.tmp_5 - 120);
     s.tmp_4 = r0;
     r0 = (s.tmp_4 / -2);
     s.tmp_0.arg2 = r0;
-    r0 = pxsim_ImageMethods.width(s.tempImg___22474);
+    r0 = pxsim_ImageMethods.width(s.tempImg___24350);
     s.tmp_7 = r0;
-    r0 = (s.tmp_7 * globals.blurSize1___22392);
+    r0 = (s.tmp_7 * globals.blurSize1___24267);
     s.tmp_0.arg3 = r0;
-    r0 = pxsim_ImageMethods.height(s.tempImg___22474);
+    r0 = pxsim_ImageMethods.height(s.tempImg___24350);
     s.tmp_8 = r0;
-    r0 = (s.tmp_8 * globals.blurSize1___22392);
+    r0 = (s.tmp_8 * globals.blurSize1___24267);
     s.tmp_0.arg4 = r0;
-    s.tmp_0.arg5 = s.tempImg___22474;
+    s.tmp_0.arg5 = s.tempImg___24350;
     s.tmp_0.arg6 = 0;
     s.tmp_0.arg7 = 0;
-    r0 = pxsim_ImageMethods.width(s.tempImg___22474);
+    r0 = pxsim_ImageMethods.width(s.tempImg___24350);
     s.tmp_0.arg8 = r0;
-    r0 = pxsim_ImageMethods.height(s.tempImg___22474);
+    r0 = pxsim_ImageMethods.height(s.tempImg___24350);
     s.tmp_0.arg9 = r0;
     s.tmp_0.arg10 = true;
     s.tmp_0.arg11 = false;
@@ -1569,11 +1568,11 @@ switch (step) {
     r0 = s.retval;
   case 11:
   case 12:
-    r0 = (globals.zoomSize1___22384 != 1);
+    r0 = (globals.zoomSize1___24259 != 1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 15; continue; }
-    r0 = (globals.zoomSize1___22384 < 1);
+    r0 = (globals.zoomSize1___24259 < 1);
     s.tmp_1 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_1);
     if (!r0) { step = 13; continue; }
@@ -1593,7 +1592,7 @@ switch (step) {
     s.tmp_0.arg2 = 0;
     s.tmp_0.arg3 = 160;
     s.tmp_0.arg4 = 120;
-    s.tmp_0.arg5 = globals.bgimg___22401;
+    s.tmp_0.arg5 = globals.bgimg___24276;
     s.tmp_0.arg6 = 0;
     s.tmp_0.arg7 = 0;
     s.tmp_0.arg8 = 160;
@@ -1607,13 +1606,13 @@ switch (step) {
   case 14:
     s.tmp_0 = helpers_imageBlit__P1954_mk(s);
     s.tmp_0.arg0 = s.arg0;
-    s.tmp_0.arg1 = globals.x1___22380;
-    s.tmp_0.arg2 = globals.y1___22378;
-    r0 = (160 * globals.zoomSize1___22384);
+    s.tmp_0.arg1 = globals.x1___24255;
+    s.tmp_0.arg2 = globals.y1___24253;
+    r0 = (160 * globals.zoomSize1___24259);
     s.tmp_0.arg3 = r0;
-    r0 = (120 * globals.zoomSize1___22384);
+    r0 = (120 * globals.zoomSize1___24259);
     s.tmp_0.arg4 = r0;
-    s.tmp_0.arg5 = s.screenClone___22468;
+    s.tmp_0.arg5 = s.screenClone___24344;
     s.tmp_0.arg6 = 0;
     s.tmp_0.arg7 = 0;
     s.tmp_0.arg8 = 160;
@@ -1631,7 +1630,7 @@ switch (step) {
     s.tmp_0.arg2 = 0;
     s.tmp_0.arg3 = 160;
     s.tmp_0.arg4 = 120;
-    s.tmp_0.arg5 = s.screenClone___22468;
+    s.tmp_0.arg5 = s.screenClone___24344;
     s.tmp_0.arg6 = 0;
     s.tmp_0.arg7 = 0;
     s.tmp_0.arg8 = 160;
@@ -1646,12 +1645,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-variable_inline__P22408.info = {"start":259,"length":1523,"line":11,"column":47,"endLine":43,"endColumn":1,"fileName":"main.ts","functionName":"inline","argumentNames":["image1","camera"]}
+variable_inline__P24283.info = {"start":259,"length":1523,"line":11,"column":47,"endLine":43,"endColumn":1,"fileName":"main.ts","functionName":"inline","argumentNames":["image1","camera"]}
 
-function variable_inline__P22408_mk(s) {
+function variable_inline__P24283_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: variable_inline__P22408, depth: s.depth + 1,
+        parent: s, fn: variable_inline__P24283, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1664,11 +1663,11 @@ function variable_inline__P22408_mk(s) {
   tmp_8: undefined,
   tmp_9: undefined,
   tmp_10: undefined,
-  i___22413: undefined,
-  x___22431: undefined,
-  y___22440: undefined,
-  screenClone___22468: undefined,
-  tempImg___22474: undefined,
+  i___24288: undefined,
+  x___24306: undefined,
+  y___24315: undefined,
+  screenClone___24344: undefined,
+  tempImg___24350: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -42709,7 +42708,7 @@ const sprites_BaseSpriteSayRenderer__C2260_VT = mkVTable({
   },
 });
 
-const breakpoints = setupDebugger(1, ["buf___22387","bgimg___22401","variable___22404","pixelArray___22396","screenStatic___22394","blurSize1___22392","zoomSize1___22384","x1___22380","y1___22378"])
+const breakpoints = setupDebugger(1, ["buf___24262","bgimg___24276","variable___24279","pixelArray___24271","screenStatic___24269","blurSize1___24267","zoomSize1___24259","x1___24255","y1___24253"])
 
-return _main___P22866
+return _main___P24742
 })
